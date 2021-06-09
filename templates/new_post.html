@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{%block title%}Upload an image{%endblock%}
+{%block body%}
+    <form method="POST" action="" enctype="multipart/form-data" style="margin-top: 20px">
+        {% csrf_token %}
+        {{form.errors}}
+        <div class="form-floating mb-3">
+            {{form.text}}
+            <label for="floatingTextarea2">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+            {{form.description}}
+            <label for="floatingTextarea2">Description</label>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Insert image file</label>
+            {{form.image}}
+        </div>
+        <div>
+            <button type="submit" class="btn btn-outline-primary">Submit form</button>
+        </div>
+    </form>
+{%endblock%}}
